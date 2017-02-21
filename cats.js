@@ -27,8 +27,27 @@ var Cat = mongoose.model("Cat", catSchema);
 //     }
 // });
 
-//retrieve cats from db
 
+//this makes and saves a new cat all at once
+Cat.create({
+    name: "Snowy",
+    age: 15,
+    temperament: "Sweet"
+}, function(err, cat){
+    if(err){
+        console.log("SOMETHIGN WENT WRONG");
+        console.log(err);
+    }else{
+        console.log("Here's a cat for ya!");
+        console.log(cat);
+    }
+});
+
+
+
+
+//retrieve cats from db
+//lists out all te cats in array format
 Cat.find({}, function(err, cats){
    if(err){
        console.log("SOMETHING DONE GOT BROKED");
