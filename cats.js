@@ -12,4 +12,8 @@ var catSchema = new mongoose.Schema({ //this defines a pattern for our data
 //we have all the methods associated with the 
 var Cat = mongoose.modle("Cat", catSchema);
 
-
+new Cat({
+    name: "George",
+    age: 11,
+    temperament: "Grouchy"
+});
