@@ -10,12 +10,12 @@ var catSchema = new mongoose.Schema({ //this defines a pattern for our data
 
 //we saved the cat Schema to a model
 //we have all the methods associated with the 
-var Cat = mongoose.modle("Cat", catSchema);
+var Cat = mongoose.model("Cat", catSchema);
 
 var george = new Cat({
-    name: "George",
-    age: 11,
-    temperament: "Grouchy"
+    name: "Mrs> Norris",
+    age: 7,
+    temperament: "Sleepy"
 });
 
 george.save(function(err, cat){
