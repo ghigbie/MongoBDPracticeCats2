@@ -12,17 +12,29 @@ var catSchema = new mongoose.Schema({ //this defines a pattern for our data
 //we have all the methods associated with the 
 var Cat = mongoose.model("Cat", catSchema);
 
-var george = new Cat({
-    name: "Mrs> Norris",
-    age: 7,
-    temperament: "Sleepy"
-});
+// var norris = new Cat({
+//     name: "Mrs> Norris",
+//     age: 7,
+//     temperament: "Sleepy"
+// });
 
-george.save(function(err, cat){
-    if(err){
-        console.log("SOMETHIGN WENT WRONG");
-    }else{
-        console.log("WE JUST SAVED A CAT TO THE DB");
-        console.log(cat);
-    }
+// norris.save(function(err, cat){
+//     if(err){
+//         console.log("SOMETHIGN WENT WRONG");
+//     }else{
+//         console.log("WE JUST SAVED A CAT TO THE DB");
+//         console.log(cat);
+//     }
+// });
+
+//retrieve cats from db
+
+Cat.find({}, function(err, cats){
+   if(err){
+       console.log("SOMETHING DONE GOT BROKED");
+       console.log(err);
+   }else{
+       console.log("ALL THE CATS.....");
+       console.log(cats);
+   }
 });
